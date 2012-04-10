@@ -1,0 +1,41 @@
+<% flash[:notice] = '' %>
+<% #if you can't find any user, this message is shown. %>
+<% if @user.nil? then %>
+  <% flash[:notice] = 'We couldn\'t find UserName1...Sorry!' %>
+<% else %>
+
+  <span style="text-align: left">
+  <%= form_tag "/twimulator/show" do |f| %>
+
+	<%= select_tag("how_many_tweets", options_for_select([["Most Recent ：最近の",1],["More Recent ：ちょっと前も",2],["Older ：かなり古いのも",3],["Oldest ：一番古いのも",4]])) %>
+    
+    <p align="center">    
+      <%= image_submit_tag("listen.png")%>
+    </p>
+
+  <ol>
+    <%= i = 0 %>
+    <% @user.each do |user| %>
+      <li class="twitterprof"><img src="<%=h user[0] %>" />
+      <b><%=h user[1] %></b>
+      <b>@</b><%= link_to user[2], 
+			  "https://twitter.com/#!/" + user[2], 'data-popup' => true %></p>
+	  <%= text_field_tag "search_string" + i.to_s, user[2], :hidden => true %>
+      <p class="twitterprof"><b><%=h user[3] %></b></p>
+ <p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      </li>
+      <%= i += 1 %>
+    <% end %> 
+  </ol>
+
+  <%= text_field_tag "counter", i - 1, :hidden => true %>
+
+  <% end %>
+  </span>
+
+  <br />
+
+<% end %>
+
+  <%= link_to_function t("Back"), "history.back()" %> 
+  

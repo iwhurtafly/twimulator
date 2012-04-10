@@ -1,0 +1,22 @@
+  <% flash[:notice] = '' %>
+  <% #if you can't find any twimulator, this message is shown. %>
+  <% if @twimulator.length == 0 then %>
+    <% flash[:notice] = 'We couldn\'t make twimulator...Sorry!' %>
+  <% else %>
+
+  <%# button_to 'Back',  :action => :new %>
+  <%= link_to_function t("Back"), "history.back()" %>
+  <ol>
+    <% @twimulator.each_with_index do |twimulator, i| %>
+	  <li class="time"><b><%=h twimulator[0] %></b>
+	  <br />
+	  <p class="twitter"><b><%=h twimulator[1] %></b></p>
+ <p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      </li>
+    <% end %> 
+  </ol>
+  <% end %> 
+  <br />
+  <%# button_to 'Back',  :action => :new %>
+  <%= link_to_function t("Back"), "history.back()" %>
+  <br />

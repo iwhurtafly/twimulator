@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Twimulator</title>
+  <%= stylesheet_link_tag 'application' %>
+
+
+</head>
+<body>
+
+<div id="wrap">
+
+  <div id="main">
+	<br />
+    <p style="color: red"><%= flash[:notice] %></p>
+    <%= yield %>
+  </div>
+
+
+<!--
+  <div id="side">
+    <p class="menu_img">
+    <%= image_tag("mimi.png", :height => '200', :width => '170') %>
+    </p>
+  </div>
+-->
+
+</div>
+
+<div id="footer">
+	<!-- ▼コピーライト -->
+	<address>&copy; <%= Time.now.year %> Respira. All Rights Reserved.</address>
+	<a class="contact" href="https://twitter.com/#!/iwhurtafly">Contact</a>
+</div>
+
+</body>
+
+</html>

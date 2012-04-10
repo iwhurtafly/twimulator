@@ -1,0 +1,47 @@
+
+<span style="text-align: left">
+
+
+  <%= form_tag "/twimulator/find" do |f| %>
+    
+	<br/>
+	<p class="howto"><b>Twitter上での会話を聞きますか？</p>	
+	<p class="description"><b>例えば、オバマ大統領とダライ・ラマ法王の会話が聞きたければ、
+		<br/>"BarackObama"と"DalaiLama"を入力し、Searchボタンを押します。</p>
+	<br/>
+	
+	<p class="howto"><b>Do You Want to Listen to a Twitter Conversation?</p>
+	<p class="description"><b>For example, if you want to listen to a conversation 
+			between "Barack Obama" and "Dalai Lama",
+		</br>enter "BarackObama" and "DalaiLama" into UserName1&2 
+			and then push "Search" button.</p>	
+	<br/>
+	<br/>
+		
+    <p class="username">UserName@
+    <%= text_field_tag :search_string1, nil, :class=>"input" %>
+	</p>
+		
+	<br/>
+
+	<p align="center">
+		<%= image_submit_tag("search.png", :id => "search_button") %>
+	</p>
+
+    <br/>
+
+	<p class="description2">
+		<%= image_tag("safari.png", :height => '23.25', :width => '56') %>
+		<%= image_tag("firefox.png", :height => '26', :width => '48.33') %>
+		recommended.
+	</p>
+	
+  <% end %>
+
+</span>
+
+
+</b>
+</p>
+
+
